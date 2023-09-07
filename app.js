@@ -5,6 +5,9 @@ const {StatusCodes} = require('http-status-codes')
 const {createResponse} = require('./response')
 
 app.get('/api', (req, res) => {
+    const Lurk = 'DefaultSlackName';
+    const Backend = 'DefaultTrack';
+
     const slackName = req.query.slack_name || Lurk;
     const track = req.query.track || Backend;
 try {
