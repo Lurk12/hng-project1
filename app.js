@@ -10,7 +10,7 @@ app.get('/api', (req, res) => {
 try {
     const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     const currentDay = daysOfWeek[new Date().getDay()];
-    console.log(currentDay);
+    // console.log(currentDay);
 
     const currentUtcTime = new Date();
     currentUtcTime.setUTCMinutes(currentUtcTime.getUTCMinutes() - 2); 
@@ -20,7 +20,7 @@ try {
 
     const isoParts = isoString.split('T')
     const currentTime = isoParts.join(' ');
-    console.log(currentTime);
+    // console.log(currentTime);
 
     
     const githubFileUrl = 'https://github.com/Lurk12/hng-project1'

@@ -7,8 +7,8 @@ function createResponse(slackName, currentDay, currentTime, track, githubFileUrl
         "Current day of the week": currentDay,
         "Current UTC time": currentTime,
         "Track": track,
-        "GitHub URL of the file being run": githubFileUrl,
-        "GitHub URL of the full source code": githubSourceUrl,
+        "Github_file_url": githubFileUrl,
+        "github_repo_url": githubSourceUrl,
         "Status Code": StatusCodes.OK
     };
 }
