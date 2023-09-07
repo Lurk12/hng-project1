@@ -6,9 +6,9 @@ const {createResponse} = require('./response')
 
 app.get('/api', (req, res) => {
     const defaultSlackName = 'Lurk';
-    const defaultTrack = 'Backend';
+    const defaultTrack = 'Backend'; 
 
-    const slackName = req.query.slack_name || defaultSlackName;
+    const slack_name = req.query.slackName || defaultSlackName;
     const track = req.query.track || defaultTrack;
 try {
     const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -16,13 +16,8 @@ try {
     // console.log(currentDay);
 
     const currentUtcTime = new Date();
-    currentUtcTime.setUTCMinutes(currentUtcTime.getUTCMinutes() - 2); 
-
-    const isoString = currentUtcTime.toISOString();
-    
-
-    const isoParts = isoString.split('T')
-    const currentTime = isoParts.join(' ');
+    currentUtcTime.setMinutes(currentUtcTime.getMinutes() - 2); // Subtract 2 minutes for validation
+    const currentTime = currentUtcTime.toISOString();
     // console.log(currentTime);
 
     
@@ -30,7 +25,7 @@ try {
     const githubSourceUrl = 'https://github.com/Lurk12/hng-project1.git'
     
 
-    const response = createResponse(slackName, currentDay, currentTime, track, githubFileUrl, githubSourceUrl);
+    const response = createResponse(slack_name, currentDay, currentTime, track, githubFileUrl, githubSourceUrl);
 
     res.status(StatusCodes.OK).json(response);
     console.log(response);
