@@ -13,9 +13,9 @@ try {
     // console.log(currentDay);
 
     const currentUtcTime = new Date();
-    currentUtcTime.setMinutes(currentUtcTime.getMinutes() - 2); // Subtract 2 minutes for validation
+    currentUtcTime.setUTCMinutes(currentUtcTime.getUTCMinutes() - 2); // Subtract 2 minutes for validation
     const isoString = currentUtcTime.toISOString();
-
+    
 
     const isoParts = isoString.split('T')
 
@@ -23,8 +23,8 @@ try {
     // console.log(currentTime);
 
     // Define GitHub URLs
-    const githubFileUrl = 'https://https://github.com/Lurk12/Date-And-Time-API'
-    const githubSourceUrl = 'https://https://github.com/Lurk12/Date-And-Time-API.git'
+    const githubFileUrl = 'https://github.com/Lurk12/hng-project1'
+    const githubSourceUrl = 'https://github.com/Lurk12/hng-project1.git'
     
 
     const response = createResponse(slackName, currentDay, currentTime, track, githubFileUrl, githubSourceUrl);
