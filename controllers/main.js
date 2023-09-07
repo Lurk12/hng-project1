@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { StatusCodes } = require('http-status-codes');
 const { createResponse } = require('../response');
 
-router.get('/api', (req, res) => {
+router.get('/', (req, res) => {
   const defaultSlackName = 'Lurk';
   const defaultTrack = 'backend';
 
