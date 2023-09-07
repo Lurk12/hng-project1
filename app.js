@@ -5,24 +5,24 @@ const {StatusCodes} = require('http-status-codes')
 const {createResponse} = require('./response')
 
 app.get('/api', (req, res) => {
-    const slackName = req.query.slack_name;
-    const track = req.query.track;
+    const slackName = req.query.slack_name || Lurk;
+    const track = req.query.track || Backend;
 try {
     const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     const currentDay = daysOfWeek[new Date().getDay()];
-    // console.log(currentDay);
+    console.log(currentDay);
 
     const currentUtcTime = new Date();
-    currentUtcTime.setUTCMinutes(currentUtcTime.getUTCMinutes() - 2); // Subtract 2 minutes for validation
+    currentUtcTime.setUTCMinutes(currentUtcTime.getUTCMinutes() - 2); 
+
     const isoString = currentUtcTime.toISOString();
     
 
     const isoParts = isoString.split('T')
-
     const currentTime = isoParts.join(' ');
-    // console.log(currentTime);
+    console.log(currentTime);
 
-    // Define GitHub URLs
+    
     const githubFileUrl = 'https://github.com/Lurk12/hng-project1'
     const githubSourceUrl = 'https://github.com/Lurk12/hng-project1.git'
     
