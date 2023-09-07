@@ -5,11 +5,11 @@ const {StatusCodes} = require('http-status-codes')
 const {createResponse} = require('./response')
 
 app.get('/api', (req, res) => {
-    const Lurk = 'DefaultSlackName';
-    const Backend = 'DefaultTrack';
+    const defaultSlackName = 'Lurk';
+    const defaultTrack = 'Backend';
 
-    const slackName = req.query.slack_name || Lurk;
-    const track = req.query.track || Backend;
+    const slackName = req.query.slack_name || defaultSlackName;
+    const track = req.query.track || defaultTrack;
 try {
     const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     const currentDay = daysOfWeek[new Date().getDay()];
