@@ -4,7 +4,7 @@ const { createResponse } = require('../response');
 
 router.get('/api', (req, res) => {
   const defaultSlackName = 'Lurk';
-  const defaultTrack = 'Backend';
+  const defaultTrack = 'backend';
 
   const slackName = req.query.slackName || defaultSlackName;
   const track = req.query.track || defaultTrack;

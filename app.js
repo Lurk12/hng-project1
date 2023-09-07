@@ -3,7 +3,7 @@ const app = express();
 
 const mainRouter = require('./controllers/main')
 
-app.use('/', mainRouter);
+app.use('/api', mainRouter);
 
 const port = process.env.PORT || 2000;
 
