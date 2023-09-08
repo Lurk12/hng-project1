@@ -1,8 +1,8 @@
 const { StatusCodes } = require("http-status-codes");
 
-function createResponse(slackName, currentDay, currentTime, track, githubFileUrl, githubSourceUrl) {
+function createResponse(slack_name, currentDay, currentTime, track, githubFileUrl, githubSourceUrl) {
     return {
-        "slack_name": slackName,
+        "slack_name": slack_name,
         "current_day": currentDay,
         "utc_time": currentTime,
         "track": track,

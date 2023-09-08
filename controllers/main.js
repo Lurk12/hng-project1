@@ -5,8 +5,7 @@ const { createResponse } = require('../response');
 router.get('/', (req, res) => {
 //   const defaultSlackName = 'Lurk';
 //   const defaultTrack = 'backend';
-  const slackName = req.query.slackName 
-  const track = req.query.track 
+ const {slack_name, track} = req.query
 
   try {
     const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -22,7 +21,7 @@ router.get('/', (req, res) => {
     const githubFileUrl = 'https://github.com/Lurk12/hng-project1';
     const githubSourceUrl = 'https://github.com/Lurk12/hng-project1.git';
 
-    const response = createResponse(slackName, currentDay, currentTime, track, githubFileUrl, githubSourceUrl);
+    const response = createResponse(slack_name, currentDay, currentTime, track, githubFileUrl, githubSourceUrl);
 
     res.status(StatusCodes.OK).json(response);
     console.log(response);
