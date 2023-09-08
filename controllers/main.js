@@ -14,10 +14,13 @@ router.get('/', (req, res) => {
     const currentDay = daysOfWeek[new Date().getDay()];
 
     const currentUtcTime = new Date();
-    currentUtcTime.setMinutes(currentUtcTime.getMinutes());
-    currentUtcTime.setMilliseconds(0);
+    currentUtcTime.setMinutes(currentUtcTime.getMinutes() - 2);
     
-    const currentTime = currentUtcTime.toISOString();
+    const currentTimeWithMilliseconds = currentUtcTime.toISOString();
+    const currentTime = currentTimeWithMilliseconds.slice(0, -5); // Remove the last 5 characters (milliseconds and 'Z')
+    
+    console.log(currentTime);
+    
     
 
     const githubFileUrl = 'https://github.com/Lurk12/hng-project1';
