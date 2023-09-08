@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
     const currentDay = daysOfWeek[new Date().getDay()];
 
     const currentUtcTime = new Date();
-    currentUtcTime.setMinutes(currentUtcTime.getMinutes() - 2); // Subtract 2 minutes for validation
+    currentUtcTime.setMinutes(currentUtcTime.getMinutes()); 
     const currentTime = currentUtcTime.toISOString();
 
     const githubFileUrl = 'https://github.com/Lurk12/hng-project1';
