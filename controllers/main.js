@@ -3,18 +3,17 @@ const { StatusCodes } = require('http-status-codes');
 const { createResponse } = require('../response');
 
 router.get('/', (req, res) => {
-  const defaultSlackName = 'Lurk';
-  const defaultTrack = 'backend';
-
-  const slackName = req.query.slackName || defaultSlackName;
-  const track = req.query.track || defaultTrack;
+//   const defaultSlackName = 'Lurk';
+//   const defaultTrack = 'backend';
+  const slackName = req.query.slackName 
+  const track = req.query.track 
 
   try {
     const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     const currentDay = daysOfWeek[new Date().getDay()];
 
     const currentUtcTime = new Date();
-    currentUtcTime.setMinutes(currentUtcTime.getMinutes() - 2);
+    currentUtcTime.setMinutes(currentUtcTime.getMinutes());
 
     const currentTimeWithMilliseconds = currentUtcTime.toISOString();
     const currentTime = currentTimeWithMilliseconds.split('.')[0] + 'Z';
