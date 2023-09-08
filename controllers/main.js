@@ -15,12 +15,9 @@ router.get('/', (req, res) => {
 
     const currentUtcTime = new Date();
     currentUtcTime.setMinutes(currentUtcTime.getMinutes() - 2);
-    
+
     const currentTimeWithMilliseconds = currentUtcTime.toISOString();
-    const currentTime = currentTimeWithMilliseconds.slice(0, -5); // Remove the last 5 characters (milliseconds and 'Z')
-    
-    console.log(currentTime);
-    
+    const currentTime = currentTimeWithMilliseconds.split('.')[0] + 'Z';
     
 
     const githubFileUrl = 'https://github.com/Lurk12/hng-project1';
